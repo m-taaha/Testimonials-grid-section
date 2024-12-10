@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+
+/* Base styles for the body */
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: hsl(210, 46%, 95%);
+}
+
+/* Grid container setup */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  margin-top: 10rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 25px;
+  align-items: stretch;
+}
+
+/* Shared styles for all testimonial boxes */
+.testimonial {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Author image styles */
+img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+/* Layout for the header section */
+header {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+/* Author name and description below each other */
+header div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Author's name styling */
+header h2 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.quotes {
+  position: absolute;
+  right: 4rem;
+  top: 0;
+  height: 20rem;
+  width: 20rem;
+}
+
+/* Author's description (e.g., Verified Graduate) */
+header p {
+  font-size: 12px;
+  margin: 5px 0 0;
+  color: hsl(210, 10%, 50%);
+}
+
+/* Specific layout for each testimonial box */
+.box1 {
+  position: relative;
+  background: url("./bg-pattern-quotation.svg") no-repeat right top;
+  background-size: 20%;
+  background-position: calc(100% - 80px) 10px;
+  grid-column: span 2; /* Spans two columns */
+  grid-row: span 1; /* Occupies one row */
+  background-color: hsl(263, 55%, 52%);
+  color: white;
+}
+
+.box2 {
+  grid-column: 3; /* Starts at the third column */
+  grid-row: 1; /* Occupies the first row */
+  background-color: hsl(217, 19%, 35%);
+  color: hsl(0, 0%, 100%);
+}
+
+.box3 {
+  grid-column: 1; /* Starts at the first column */
+  grid-row: 2; /* Occupies the second row */
+}
+
+.box4 {
+  grid-column: 2 / span 2;
+  grid-row: 2;
+  background-color: hsl(219, 29%, 14%);
+  color: white;
+}
+
+.box5 {
+  grid-column: 4; /* Starts at the fourth column */
+  grid-row: 1 / span 2; /* Spans two rows */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  align-self: stretch;
+  background-color: hsl(0, 0%, 100%);
+}
+.name h2 {
+  color: hsl(0, 0%, 81%);
+}
+.name p {
+  color: hsl(0, 0%, 81%);
+  opacity: 50;
+}
+.review {
+  margin-top: -1rem;
+  color: hsl(205, 7%, 65%);
+  opacity: 70%;
+  font-weight: 600;
+  font-size: 13px;
+}
+h3 {
+  font-weight: 500;
+}
+
+/* Mobile view styles (375px) */
+@media screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 2rem;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .testimonial {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .box1,
+  .box2,
+  .box3,
+  .box4,
+  .box5 {
+    grid-column: auto;
+    grid-row: auto;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .box1 {
+    background: hsl(263, 55%, 52%);
+  }
+
+  .box2 {
+    background: hsl(217, 19%, 35%);
+  }
+
+  .box4 {
+    background: hsl(219, 29%, 14%);
+  }
+
+  .review {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+
+  header h2 {
+    font-size: 14px;
+  }
+}
